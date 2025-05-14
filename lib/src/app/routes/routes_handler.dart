@@ -11,4 +11,7 @@ List<GetPage> routesHandler = [
 
   // Onboarding Screen Handler
   GetPage(name: BaseRoute.onboarding, page: () => RoutesConfig.onboarding),
+
+  // Sign In Screen Handler
+  GetPage(name: BaseRoute.signIn, page: () => RoutesConfig.signIn),
 ];

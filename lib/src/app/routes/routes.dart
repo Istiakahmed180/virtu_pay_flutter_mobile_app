@@ -7,4 +7,7 @@ class BaseRoute {
 
   // Onboarding Route
   static const String onboarding = "/onboarding_screen";
+
+  // Sign In Route
+  static const String signIn = "/sign_in_screen";
 }

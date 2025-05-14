@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:virtu_pay/src/app/constants/app_colors.dart';
 import 'package:virtu_pay/src/app/constants/assets_path/png_assets.dart';
+import 'package:virtu_pay/src/app/routes/routes.dart';
 import 'package:virtu_pay/src/common/widgets/button/common_button.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -86,7 +88,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               children: [
                 if (_currentPage == 0 || _currentPage == 1)
                   CommonButton(
-                    onPressed: () {},
+                    onPressed: () => Get.toNamed(BaseRoute.signIn),
                     width: 80,
                     height: 40,
                     text: "Skip",
@@ -97,7 +99,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 _currentPage == _pages.length - 1
                     ? Expanded(
                       child: CommonButton(
-                        onPressed: () {},
+                        onPressed: () => Get.toNamed(BaseRoute.signIn),
                         width: double.infinity,
                         height: 50,
                         text: "Continue",
@@ -107,7 +109,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       width: 80,
                       height: 40,
                       text: "Next",
-                      onPressed: () {},
+                      onPressed: () {
+                        _pageController.nextPage(
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeInOut,
+                        );
+                      },
                     ),
               ],
             ),
