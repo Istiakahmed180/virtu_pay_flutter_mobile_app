@@ -33,6 +33,7 @@ flutter:
     - assets/logos/
     - assets/others/shadow/
     - assets/others/frame/
+    - assets/images/
 
   fonts:
     - family: Poppins

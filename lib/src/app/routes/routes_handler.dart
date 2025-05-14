@@ -8,4 +8,7 @@ List<GetPage> routesHandler = [
 
   // Welcome Screen Handler
   GetPage(name: BaseRoute.welcome, page: () => RoutesConfig.welcome),
+
+  // Onboarding Screen Handler
+  GetPage(name: BaseRoute.onboarding, page: () => RoutesConfig.onboarding),
 ];

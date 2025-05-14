@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:virtu_pay/src/app/constants/app_colors.dart';
 import 'package:virtu_pay/src/app/constants/assets_path/png_assets.dart';
-import 'package:virtu_pay/src/common/widgets/button/common_elevated_button.dart';
+import 'package:virtu_pay/src/app/routes/routes.dart';
+import 'package:virtu_pay/src/common/widgets/button/common_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -27,27 +29,25 @@ class WelcomeScreen extends StatelessWidget {
             SizedBox(height: 16),
             Image.asset(PngAssets.appSubLogo, width: 230),
             Spacer(),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 70),
-              child: Text(
-                textAlign: TextAlign.center,
-                "Your secure, smart, and instant virtual card solution",
-                style: TextStyle(
-                  color: AppColors.textPrimary.withValues(alpha: 0.60),
-                  fontSize: 16,
-                ),
+            Text(
+              textAlign: TextAlign.center,
+              "Your secure, smart, and instant\nvirtual card solution",
+              style: TextStyle(
+                color: AppColors.textPrimary.withValues(alpha: 0.60),
+                fontSize: 16,
               ),
             ),
             SizedBox(height: 60),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 18),
-              child: CommonElevatedButton(
+              child: CommonButton(
+                onPressed: () => Get.toNamed(BaseRoute.onboarding),
                 width: double.infinity,
                 height: 52,
                 text: "Get Started",
               ),
             ),
-            SizedBox(height: 50),
+            SizedBox(height: 32),
           ],
         ),
       ),

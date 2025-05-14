@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:virtu_pay/src/app/constants/app_colors.dart';
 
-class CommonElevatedButton extends StatelessWidget {
+class CommonButton extends StatelessWidget {
   final double width;
   final double height;
   final double borderRadius;
@@ -11,8 +11,10 @@ class CommonElevatedButton extends StatelessWidget {
   final double fontSize;
   final Color textColor;
   final Color? backgroundColor;
+  final Color? borderColor;
+  final double borderWidth;
 
-  const CommonElevatedButton({
+  const CommonButton({
     super.key,
     required this.width,
     required this.height,
@@ -23,6 +25,8 @@ class CommonElevatedButton extends StatelessWidget {
     this.fontSize = 16,
     this.textColor = AppColors.textPrimary,
     this.backgroundColor = AppColors.primary,
+    this.borderColor,
+    this.borderWidth = 0,
   });
 
   @override
@@ -37,6 +41,10 @@ class CommonElevatedButton extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius),
           color: backgroundColor,
+          border:
+              borderColor != null
+                  ? Border.all(color: borderColor!, width: borderWidth)
+                  : null,
         ),
         child: Text(
           text,

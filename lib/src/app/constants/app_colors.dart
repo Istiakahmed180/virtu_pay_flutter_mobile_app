@@ -10,6 +10,7 @@ class AppColors {
 
   // Secondary Colors
   static const Color secondary = Color(0xFF7E52FF);
+  static const Color secondaryTwo = Color(0xFFE3D1FF);
 
   // Text Colors
   static const Color textPrimary = Color(0xFF0D0E0F);
@@ -23,4 +24,5 @@ class AppColors {
   // Utility
   static const Color white = Color(0xFFFFFFFF);
   static const Color grey = Color(0xFF6C7278);
+  static const Color transparent = Colors.transparent;
 }
