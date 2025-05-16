@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:virtu_pay/src/app/constants/app_colors.dart';
 import 'package:virtu_pay/src/app/constants/assets_path/png_assets.dart';
@@ -27,13 +26,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(statusBarIconBrightness: Brightness.dark),
-      child: Scaffold(
-        backgroundColor: AppColors.primary,
-        appBar: AppBar(toolbarHeight: 0, backgroundColor: AppColors.primary),
-        body: Center(child: Image.asset(PngAssets.appLogo, width: 110)),
-      ),
+    return Scaffold(
+      backgroundColor: AppColors.primary,
+      appBar: AppBar(toolbarHeight: 0, backgroundColor: AppColors.primary),
+      body: Center(child: Image.asset(PngAssets.appLogo, width: 110)),
     );
   }
 }
