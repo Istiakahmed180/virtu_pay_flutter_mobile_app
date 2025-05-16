@@ -34,6 +34,7 @@ flutter:
     - assets/others/shadow/
     - assets/others/frame/
     - assets/images/
+    - assets/icons/common/
 
   fonts:
     - family: Poppins

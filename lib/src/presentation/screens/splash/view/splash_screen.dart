@@ -3,15 +3,30 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:virtu_pay/src/app/constants/app_colors.dart';
 import 'package:virtu_pay/src/app/constants/assets_path/png_assets.dart';
-import 'package:virtu_pay/src/presentation/screens/splash/controller/splash_controller.dart';
+import 'package:virtu_pay/src/app/routes/routes.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    Get.put(SplashController());
+  State<SplashScreen> createState() => _SplashScreenState();
+}
 
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    moveToNextScreen();
+  }
+
+  Future<void> moveToNextScreen() async {
+    Future.delayed(Duration(seconds: 5), () {
+      Get.offNamed(BaseRoute.welcome);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(statusBarIconBrightness: Brightness.dark),
       child: Scaffold(

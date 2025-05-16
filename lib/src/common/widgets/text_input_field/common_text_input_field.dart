@@ -6,12 +6,14 @@ class CommonTextInputField extends StatelessWidget {
   final bool obscureText;
   final TextEditingController? controller;
   final Function(String)? onChanged;
+  final GestureTapCallback? onSuffixChanged;
   final TextInputType? keyboardType;
   final Color? fillColor;
   final VoidCallback? onTap;
   final double? height;
   final String? suffixIcon;
   final Color? suffixIconColor;
+  final bool? isSuffixIconChanged;
 
   const CommonTextInputField({
     super.key,
@@ -24,7 +26,9 @@ class CommonTextInputField extends StatelessWidget {
     this.fillColor,
     this.height = 48,
     this.suffixIcon,
-    this.suffixIconColor,
+    this.suffixIconColor = AppColors.textPrimary,
+    this.onSuffixChanged,
+    this.isSuffixIconChanged = false,
   });
 
   @override
@@ -65,11 +69,23 @@ class CommonTextInputField extends StatelessWidget {
           ),
           suffixIcon:
               suffixIcon != null
-                  ? Image.asset(
-                    suffixIcon!,
-                    width: 20,
-                    height: 20,
-                    color: suffixIconColor,
+                  ? Padding(
+                    padding: const EdgeInsets.only(
+                      right: 16,
+                      top: 12,
+                      bottom: 12,
+                    ),
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(30),
+                      onTap:
+                          isSuffixIconChanged == true ? onSuffixChanged : null,
+                      child: Image.asset(
+                        suffixIcon!,
+                        width: 20,
+                        height: 20,
+                        color: suffixIconColor!.withValues(alpha: 0.40),
+                      ),
+                    ),
                   )
                   : null,
         ),
