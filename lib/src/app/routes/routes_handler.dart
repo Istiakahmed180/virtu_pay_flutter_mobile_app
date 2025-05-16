@@ -14,4 +14,7 @@ List<GetPage> routesHandler = [
 
   // Sign In Screen Handler
   GetPage(name: BaseRoute.signIn, page: () => RoutesConfig.signIn),
+
+  // Sign Up Screen Handler
+  GetPage(name: BaseRoute.signUp, page: () => RoutesConfig.signUp),
 ];

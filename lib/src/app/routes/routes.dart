@@ -10,4 +10,7 @@ class BaseRoute {
 
   // Sign In Route
   static const String signIn = "/sign_in_screen";
+
+  // Sign Up Route
+  static const String signUp = "/sign_up_screen";
 }

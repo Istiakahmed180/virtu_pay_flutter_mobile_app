@@ -7,15 +7,16 @@ import 'package:virtu_pay/src/app/routes/routes.dart';
 import 'package:virtu_pay/src/common/widgets/button/common_button.dart';
 import 'package:virtu_pay/src/common/widgets/text_input_field/common_text_input_field.dart';
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   bool isPasswordVisible = true;
+  bool isConfirmPasswordVisible = true;
   bool isRememberMe = false;
 
   @override
@@ -30,7 +31,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 Image.asset(PngAssets.appSubLogo, height: 30),
                 SizedBox(height: 30),
                 Text(
-                  "Sign in to your Account",
+                  "Create Your Account",
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 24,
@@ -38,6 +39,25 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ),
                 SizedBox(height: 30),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Full Name",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 13,
+                        color: AppColors.textPrimary.withValues(alpha: 0.60),
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    CommonTextInputField(
+                      hintText: "Jhhn Wick",
+                      keyboardType: TextInputType.name,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -85,66 +105,77 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: 5),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                SizedBox(height: 20),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        isRememberMe = !isRememberMe;
-                        setState(() {});
-                      },
-                      child: Row(
-                        children: [
-                          Checkbox(
-                            checkColor: AppColors.white,
-                            side: BorderSide(
-                              color: AppColors.textPrimary.withValues(
-                                alpha: 0.10,
-                              ),
-                              width: 1,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(6),
-                            ),
-                            activeColor: AppColors.secondary,
-                            materialTapTargetSize:
-                                MaterialTapTargetSize.shrinkWrap,
-                            visualDensity: VisualDensity.compact,
-                            value: isRememberMe,
-                            onChanged: (bool? value) {
-                              isRememberMe = value!;
-                              setState(() {});
-                            },
-                          ),
-                          Text(
-                            "Remember me",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 13,
-                              color: AppColors.textTertiary.withValues(
-                                alpha: 0.60,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                     Text(
-                      "Forgot Password",
+                      "Confirm Password",
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 13,
-                        color: AppColors.secondary,
+                        color: AppColors.textPrimary.withValues(alpha: 0.60),
                       ),
                     ),
+                    SizedBox(height: 8),
+                    CommonTextInputField(
+                      hintText: "12345678",
+                      obscureText: isConfirmPasswordVisible,
+                      suffixIcon:
+                          isConfirmPasswordVisible == true
+                              ? PngAssets.commonEyeShowIcon
+                              : PngAssets.commonEyeHideIcon,
+                      isSuffixIconChanged: true,
+                      onSuffixChanged: () {
+                        isConfirmPasswordVisible = !isConfirmPasswordVisible;
+                        setState(() {});
+                      },
+                      keyboardType: TextInputType.visiblePassword,
+                    ),
                   ],
+                ),
+                SizedBox(height: 5),
+                GestureDetector(
+                  onTap: () {
+                    isRememberMe = !isRememberMe;
+                    setState(() {});
+                  },
+                  child: Row(
+                    children: [
+                      Checkbox(
+                        checkColor: AppColors.white,
+                        side: BorderSide(
+                          color: AppColors.textPrimary.withValues(alpha: 0.10),
+                          width: 1,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        activeColor: AppColors.secondary,
+                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        visualDensity: VisualDensity.compact,
+                        value: isRememberMe,
+                        onChanged: (bool? value) {
+                          isRememberMe = value!;
+                          setState(() {});
+                        },
+                      ),
+                      Text(
+                        "Remember me",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 13,
+                          color: AppColors.textTertiary.withValues(alpha: 0.60),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(height: 40),
                 CommonButton(
                   width: double.infinity,
                   height: 48,
-                  text: "Sign In",
+                  text: "Sign Up",
                 ),
                 SizedBox(height: 20),
                 Align(
@@ -153,7 +184,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     TextSpan(
                       children: [
                         TextSpan(
-                          text: "Don’t have an account? ",
+                          text: "Already have an account? ",
                           style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 13,
@@ -163,7 +194,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           ),
                         ),
                         TextSpan(
-                          text: "Sign Up",
+                          text: "Sign In",
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 13,
@@ -172,64 +203,11 @@ class _SignInScreenState extends State<SignInScreen> {
                           recognizer:
                               TapGestureRecognizer()
                                 ..onTap = () {
-                                  Get.toNamed(BaseRoute.signUp);
+                                  Get.back();
                                 },
                         ),
                       ],
                     ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Divider(
-                        height: 0,
-                        color: AppColors.border.withValues(alpha: 0.08),
-                        endIndent: 16,
-                      ),
-                    ),
-                    Text(
-                      "Or",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12,
-                        color: AppColors.grey,
-                      ),
-                    ),
-                    Expanded(
-                      child: Divider(
-                        height: 0,
-                        color: AppColors.border.withValues(alpha: 0.08),
-                        indent: 16,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 20),
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 14),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    border: Border.all(
-                      color: AppColors.border.withValues(alpha: 0.10),
-                      width: 1,
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(PngAssets.commonGoogleIcon, width: 18),
-                      SizedBox(width: 10),
-                      Text(
-                        "Continue with Google",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14,
-                          color: AppColors.border,
-                        ),
-                      ),
-                    ],
                   ),
                 ),
               ],
