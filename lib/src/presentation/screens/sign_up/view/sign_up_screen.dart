@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:virtu_pay/src/app/constants/app_colors.dart';
 import 'package:virtu_pay/src/app/constants/assets_path/png_assets.dart';
-import 'package:virtu_pay/src/app/routes/routes.dart';
 import 'package:virtu_pay/src/common/widgets/button/common_button.dart';
 import 'package:virtu_pay/src/common/widgets/text_input_field/common_text_input_field.dart';
 

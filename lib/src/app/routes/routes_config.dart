@@ -1,3 +1,4 @@
+import 'package:virtu_pay/src/app/navigation/navigation_screen.dart';
 import 'package:virtu_pay/src/presentation/screens/forgot_password/view/forgot_password_screen.dart';
 import 'package:virtu_pay/src/presentation/screens/onboarding/view/onboarding_screen.dart';
 import 'package:virtu_pay/src/presentation/screens/sign_in/view/sign_in_screen.dart';
@@ -23,4 +24,7 @@ class RoutesConfig {
 
   // Forgot Password Screen
   static const forgotPassword = ForgotPasswordScreen();
+
+  // Navigation Screen
+  static const navigation = NavigationScreen();
 }

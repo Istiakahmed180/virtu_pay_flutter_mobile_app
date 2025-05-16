@@ -4,6 +4,10 @@ class PngAssets {
   static const String _baseCommonPath = "assets/icons/common";
   static const String _baseFramePath = "assets/others/frame";
   static const String _baseImagePath = "assets/images";
+  static const String _baseBottomNavSolidPath =
+      "assets/icons/bottom_navigation/solid";
+  static const String _baseBottomNavRawPath =
+      "assets/icons/bottom_navigation/raw";
 
   //  ------------------------------------------------------------------------- //
 
@@ -22,6 +26,26 @@ class PngAssets {
   static const String onboardingImageThree =
       "$_baseImagePath/onboarding_image_three.png";
 
+  // Bottom Navigation Solid
+  static const String bottomNavigationCardSolidIcon =
+      "$_baseBottomNavSolidPath/bottom_navigation_card_solid_icon.png";
+  static const String bottomNavigationHomeSolidIcon =
+      "$_baseBottomNavSolidPath/bottom_navigation_home_solid_icon.png";
+  static const String bottomNavigationSettingsSolidIcon =
+      "$_baseBottomNavSolidPath/bottom_navigation_settings_solid_icon.png";
+  static const String bottomNavigationTransactionSolidIcon =
+      "$_baseBottomNavSolidPath/bottom_navigation_transaction_solid_icon.png";
+
+  // Bottom Navigation Raw
+  static const String bottomNavigationCardRawIcon =
+      "$_baseBottomNavRawPath/bottom_navigation_card_raw_icon.png";
+  static const String bottomNavigationHomeRawIcon =
+      "$_baseBottomNavRawPath/bottom_navigation_home_raw_icon.png";
+  static const String bottomNavigationSettingsRawIcon =
+      "$_baseBottomNavRawPath/bottom_navigation_settings_raw_icon.png";
+  static const String bottomNavigationTransactionRawIcon =
+      "$_baseBottomNavRawPath/bottom_navigation_transaction_raw_icon.png";
+
   // Common
   static const String commonEyeShowIcon =
       "$_baseCommonPath/common_eye_show_icon.png";
@@ -29,4 +53,5 @@ class PngAssets {
       "$_baseCommonPath/common_eye_hide_icon.png";
   static const String commonGoogleIcon =
       "$_baseCommonPath/common_google_icon.png";
+  static const String commonPlusIcon = "$_baseCommonPath/common_plus_icon.png";
 }

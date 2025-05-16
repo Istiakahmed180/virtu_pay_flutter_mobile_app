@@ -24,5 +24,6 @@ class AppColors {
   // Utility
   static const Color white = Color(0xFFFFFFFF);
   static const Color grey = Color(0xFF6C7278);
+  static const Color greyTwo = Color(0xFF999999);
   static const Color transparent = Colors.transparent;
 }

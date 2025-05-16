@@ -148,6 +148,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   width: double.infinity,
                   height: 48,
                   text: "Sign In",
+                  onPressed: () => Get.toNamed(BaseRoute.navigation),
                 ),
                 SizedBox(height: 20),
                 Align(
