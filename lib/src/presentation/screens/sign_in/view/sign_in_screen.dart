@@ -130,12 +130,15 @@ class _SignInScreenState extends State<SignInScreen> {
                         ],
                       ),
                     ),
-                    Text(
-                      "Forgot Password",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 13,
-                        color: AppColors.secondary,
+                    GestureDetector(
+                      onTap: () => Get.toNamed(BaseRoute.forgotPassword),
+                      child: Text(
+                        "Forgot Password",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 13,
+                          color: AppColors.secondary,
+                        ),
                       ),
                     ),
                   ],

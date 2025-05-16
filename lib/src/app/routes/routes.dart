@@ -13,4 +13,7 @@ class BaseRoute {
 
   // Sign Up Route
   static const String signUp = "/sign_up_screen";
+
+  // Forgot Password Route
+  static const String forgotPassword = "/forgot_password_screen";
 }
