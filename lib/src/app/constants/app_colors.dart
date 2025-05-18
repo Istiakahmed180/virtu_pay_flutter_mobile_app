@@ -24,6 +24,7 @@ class AppColors {
 
   // Utility
   static const Color white = Color(0xFFFFFFFF);
+  static const Color black = Color(0xFF000000);
   static const Color card = Color(0xFFF5F7FF);
   static const Color grey = Color(0xFF6C7278);
   static const Color greyTwo = Color(0xFF999999);

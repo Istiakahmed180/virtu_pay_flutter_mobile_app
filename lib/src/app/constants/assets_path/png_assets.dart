@@ -18,6 +18,7 @@ class PngAssets {
   // Frame
   static const String welcomeFrame = "$_baseFramePath/welcome_frame.png";
   static const String cardFrame = "$_baseFramePath/card_frame.png";
+  static const String quickMenuFrame = "$_baseFramePath/quick_menu_frame.png";
 
   // Image
   static const String onboardingImageOne =
@@ -61,4 +62,13 @@ class PngAssets {
       "$_baseCommonPath/common_notification_icon.png";
   static const String commonExchangeIcon =
       "$_baseCommonPath/common_exchange_icon.png";
+  static const String commonEyeShowWhiteIcon =
+      "$_baseCommonPath/common_eye_show_white_icon.png";
+  static const String commonCustomerSupportIcon =
+      "$_baseCommonPath/common_customer_support_icon.png";
+  static const String commonGiftIcon = "$_baseCommonPath/common_gift_icon.png";
+  static const String commonMoneySendIcon =
+      "$_baseCommonPath/common_money_send_icon.png";
+  static const String commonUserSwitchIcon =
+      "$_baseCommonPath/common_user_switch_icon.png";
 }
