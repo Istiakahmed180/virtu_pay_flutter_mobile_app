@@ -17,6 +17,7 @@ class PngAssets {
 
   // Frame
   static const String welcomeFrame = "$_baseFramePath/welcome_frame.png";
+  static const String cardFrame = "$_baseFramePath/card_frame.png";
 
   // Image
   static const String onboardingImageOne =
@@ -25,6 +26,7 @@ class PngAssets {
       "$_baseImagePath/onboarding_image_two.png";
   static const String onboardingImageThree =
       "$_baseImagePath/onboarding_image_three.png";
+  static const String avatarOne = "$_baseImagePath/avatar_one.png";
 
   // Bottom Navigation Solid
   static const String bottomNavigationCardSolidIcon =
@@ -54,4 +56,9 @@ class PngAssets {
   static const String commonGoogleIcon =
       "$_baseCommonPath/common_google_icon.png";
   static const String commonPlusIcon = "$_baseCommonPath/common_plus_icon.png";
+  static const String commonMenuIcon = "$_baseCommonPath/common_menu_icon.png";
+  static const String commonNotificationIcon =
+      "$_baseCommonPath/common_notification_icon.png";
+  static const String commonExchangeIcon =
+      "$_baseCommonPath/common_exchange_icon.png";
 }

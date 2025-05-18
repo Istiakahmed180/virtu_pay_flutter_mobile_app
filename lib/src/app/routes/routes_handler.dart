@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:virtu_pay/src/app/bindings/app_bindings.dart';
 import 'package:virtu_pay/src/app/routes/routes.dart';
 import 'package:virtu_pay/src/app/routes/routes_config.dart';
 
@@ -23,12 +22,5 @@ List<GetPage> routesHandler = [
   GetPage(
     name: BaseRoute.forgotPassword,
     page: () => RoutesConfig.forgotPassword,
-  ),
-
-  // Navigation Screen Handler
-  GetPage(
-    name: BaseRoute.navigation,
-    page: () => RoutesConfig.navigation,
-    bindings: [NavigationBinding()],
   ),
 ];

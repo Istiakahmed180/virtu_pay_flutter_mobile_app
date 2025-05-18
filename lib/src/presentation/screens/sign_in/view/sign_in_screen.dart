@@ -6,6 +6,7 @@ import 'package:virtu_pay/src/app/constants/assets_path/png_assets.dart';
 import 'package:virtu_pay/src/app/routes/routes.dart';
 import 'package:virtu_pay/src/common/widgets/button/common_button.dart';
 import 'package:virtu_pay/src/common/widgets/text_input_field/common_text_input_field.dart';
+import 'package:virtu_pay/src/presentation/screens/home/view/home_screen.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -148,7 +149,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   width: double.infinity,
                   height: 48,
                   text: "Sign In",
-                  onPressed: () => Get.toNamed(BaseRoute.navigation),
+                  onPressed: () => Get.to(HomeScreen()),
                 ),
                 SizedBox(height: 20),
                 Align(

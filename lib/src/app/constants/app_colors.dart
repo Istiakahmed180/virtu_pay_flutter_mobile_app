@@ -20,9 +20,11 @@ class AppColors {
   static const Color border = Color(0xFF1A1A1A);
 
   // Error/Warning/Success
+  static const Color warning = Color(0xFFFFB411);
 
   // Utility
   static const Color white = Color(0xFFFFFFFF);
+  static const Color card = Color(0xFFF5F7FF);
   static const Color grey = Color(0xFF6C7278);
   static const Color greyTwo = Color(0xFF999999);
   static const Color transparent = Colors.transparent;
