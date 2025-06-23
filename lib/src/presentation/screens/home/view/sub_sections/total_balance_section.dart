@@ -9,6 +9,8 @@ class TotalBalanceSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
+      height: 177,
       padding: EdgeInsets.all(24),
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -17,16 +19,18 @@ class TotalBalanceSection extends StatelessWidget {
         ),
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             "Total Balance",
             style: TextStyle(
               fontWeight: FontWeight.w500,
-              fontSize: 12,
-              color: AppColors.textTertiary.withValues(alpha: 0.60),
+              fontSize: 13,
+              color: AppColors.textPrimary.withValues(alpha: 0.60),
             ),
           ),
+          const SizedBox(height: 2),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -40,7 +44,8 @@ class TotalBalanceSection extends StatelessWidget {
               ),
               Image.asset(
                 PngAssets.commonEyeShowIcon,
-                width: 24,
+                width: 26,
+                height: 26,
                 color: AppColors.textPrimary,
               ),
             ],
@@ -48,36 +53,17 @@ class TotalBalanceSection extends StatelessWidget {
           SizedBox(height: 24),
           Row(
             children: [
-              Expanded(
-                child: CommonIconButton(
-                  width: 138,
-                  height: 40,
-                  text: "Add Money",
-                  fontWeight: FontWeight.w600,
-                  fontSize: 13,
-                  icon: PngAssets.commonPlusIcon,
-                  iconWidth: 20,
-                  iconHeight: 20,
-                  iconAndTextSpace: 6,
-                  iconColor: AppColors.textPrimary,
-                ),
+              CommonIconButton(
+                text: "Add Money",
+                icon: PngAssets.commonPlusIcon,
               ),
               SizedBox(width: 16),
-              Expanded(
-                child: CommonIconButton(
-                  width: 138,
-                  height: 40,
-                  text: "Exchange",
-                  fontWeight: FontWeight.w600,
-                  fontSize: 13,
-                  icon: PngAssets.commonPlusIcon,
-                  iconWidth: 20,
-                  iconHeight: 20,
-                  iconAndTextSpace: 6,
-                  iconColor: AppColors.white,
-                  textColor: AppColors.white,
-                  backgroundColor: AppColors.secondary,
-                ),
+              CommonIconButton(
+                text: "Exchange",
+                icon: PngAssets.commonExchangeIcon,
+                backgroundColor: AppColors.secondary,
+                textColor: AppColors.white,
+                iconColor: AppColors.white,
               ),
             ],
           ),

@@ -31,7 +31,6 @@ flutter:
 
   assets:
     - assets/logos/
-    - assets/others/shadow/
     - assets/others/frame/
     - assets/images/
     - assets/icons/common/

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:virtu_pay/src/app/constants/app_colors.dart';
 
 class CommonIconButton extends StatelessWidget {
-  final double width;
-  final double height;
   final double borderRadius;
   final String text;
   final VoidCallback? onPressed;
@@ -18,25 +16,27 @@ class CommonIconButton extends StatelessWidget {
   final double iconHeight;
   final Color? iconColor;
   final double iconAndTextSpace;
+  final double horizontalPadding;
+  final double verticalPadding;
 
   const CommonIconButton({
     super.key,
-    required this.width,
-    required this.height,
     required this.text,
     this.borderRadius = 100,
     this.onPressed,
-    this.fontWeight = FontWeight.w500,
-    this.fontSize = 16,
+    this.fontWeight = FontWeight.w600,
+    this.fontSize = 13,
     this.textColor = AppColors.textPrimary,
     this.borderColor,
     this.borderWidth = 0,
     this.backgroundColor = AppColors.primary,
     required this.icon,
-    required this.iconWidth,
-    required this.iconHeight,
-    this.iconColor = AppColors.white,
-    required this.iconAndTextSpace,
+    this.iconWidth = 20,
+    this.iconHeight = 20,
+    this.iconColor = AppColors.textPrimary,
+    this.iconAndTextSpace = 6,
+    this.horizontalPadding = 18.5,
+    this.verticalPadding = 10,
   });
 
   @override
@@ -44,8 +44,10 @@ class CommonIconButton extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        width: width,
-        height: height,
+        padding: EdgeInsets.symmetric(
+          horizontal: horizontalPadding,
+          vertical: verticalPadding,
+        ),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius),

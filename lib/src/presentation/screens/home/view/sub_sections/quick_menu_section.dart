@@ -70,7 +70,7 @@ class QuickMenuSection extends StatelessWidget {
           title,
           style: TextStyle(
             fontWeight: FontWeight.w500,
-            fontSize: 10,
+            fontSize: 11,
             color: AppColors.black,
           ),
         ),

@@ -14,9 +14,13 @@ class HeaderSection extends StatelessWidget {
         Row(
           children: [
             Badge(
-              backgroundColor: AppColors.warning,
+              backgroundColor: AppColors.error,
               smallSize: 8,
-              child: Image.asset(PngAssets.commonNotificationIcon, width: 24),
+              child: Image.asset(
+                PngAssets.commonNotificationIcon,
+                width: 24,
+                height: 24,
+              ),
             ),
             SizedBox(width: 10),
             SizedBox(
