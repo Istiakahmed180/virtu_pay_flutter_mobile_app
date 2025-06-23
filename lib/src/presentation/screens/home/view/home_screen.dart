@@ -4,6 +4,7 @@ import 'package:virtu_pay/src/presentation/screens/home/view/sub_sections/credit
 import 'package:virtu_pay/src/presentation/screens/home/view/sub_sections/header_section.dart';
 import 'package:virtu_pay/src/presentation/screens/home/view/sub_sections/quick_menu_section.dart';
 import 'package:virtu_pay/src/presentation/screens/home/view/sub_sections/total_balance_section.dart';
+import 'package:virtu_pay/src/presentation/screens/home/view/sub_sections/transaction_section.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,6 +24,9 @@ class HomeScreen extends StatelessWidget {
             QuickMenuSection(),
             SizedBox(height: 20),
             CreditCardSliderSection(),
+            SizedBox(height: 20),
+            TransactionSection(),
+            SizedBox(height: 32),
           ],
         ),
       ),
