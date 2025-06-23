@@ -13,20 +13,17 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: CommonDefaultAppBar(),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18),
-          child: Column(
-            children: [
-              SizedBox(height: 12),
-              HeaderSection(),
-              SizedBox(height: 20),
-              TotalBalanceSection(),
-              SizedBox(height: 20),
-              QuickMenuSection(),
-              SizedBox(height: 20),
-              CreditCardSliderSection(),
-            ],
-          ),
+        child: Column(
+          children: [
+            SizedBox(height: 12),
+            HeaderSection(),
+            SizedBox(height: 20),
+            TotalBalanceSection(),
+            SizedBox(height: 20),
+            QuickMenuSection(),
+            SizedBox(height: 20),
+            CreditCardSliderSection(),
+          ],
         ),
       ),
     );

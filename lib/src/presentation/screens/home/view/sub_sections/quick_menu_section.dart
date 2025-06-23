@@ -8,45 +8,48 @@ class QuickMenuSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TitleAndSeeAllSection(title: "Quick Menu"),
-        SizedBox(height: 10),
-        Container(
-          padding: EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(PngAssets.quickMenuFrame),
-              fit: BoxFit.fill,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 18),
+      child: Column(
+        children: [
+          TitleAndSeeAllSection(title: "Quick Menu"),
+          SizedBox(height: 10),
+          Container(
+            padding: EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(PngAssets.quickMenuFrame),
+                fit: BoxFit.fill,
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _buildActionButton(
+                  title: "Send Money",
+                  boxColor: Color(0xFFDA646C).withValues(alpha: 0.10),
+                  icon: PngAssets.commonMoneySendIcon,
+                ),
+                _buildActionButton(
+                  title: "Referrals",
+                  boxColor: Color(0xFF04A485).withValues(alpha: 0.10),
+                  icon: PngAssets.commonUserSwitchIcon,
+                ),
+                _buildActionButton(
+                  title: "Support",
+                  boxColor: Color(0xFFB205BD).withValues(alpha: 0.10),
+                  icon: PngAssets.commonCustomerSupportIcon,
+                ),
+                _buildActionButton(
+                  title: "Rewards",
+                  boxColor: Color(0xFF7E52FF).withValues(alpha: 0.10),
+                  icon: PngAssets.commonGiftIcon,
+                ),
+              ],
             ),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              _buildActionButton(
-                title: "Send Money",
-                boxColor: Color(0xFFDA646C).withValues(alpha: 0.10),
-                icon: PngAssets.commonMoneySendIcon,
-              ),
-              _buildActionButton(
-                title: "Referrals",
-                boxColor: Color(0xFF04A485).withValues(alpha: 0.10),
-                icon: PngAssets.commonUserSwitchIcon,
-              ),
-              _buildActionButton(
-                title: "Support",
-                boxColor: Color(0xFFB205BD).withValues(alpha: 0.10),
-                icon: PngAssets.commonCustomerSupportIcon,
-              ),
-              _buildActionButton(
-                title: "Rewards",
-                boxColor: Color(0xFF7E52FF).withValues(alpha: 0.10),
-                icon: PngAssets.commonGiftIcon,
-              ),
-            ],
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

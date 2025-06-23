@@ -7,30 +7,33 @@ class HeaderSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Image.asset(PngAssets.commonMenuIcon, width: 24),
-        Row(
-          children: [
-            Badge(
-              backgroundColor: AppColors.error,
-              smallSize: 8,
-              child: Image.asset(
-                PngAssets.commonNotificationIcon,
-                width: 24,
-                height: 24,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 18),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Image.asset(PngAssets.commonMenuIcon, width: 24),
+          Row(
+            children: [
+              Badge(
+                backgroundColor: AppColors.error,
+                smallSize: 8,
+                child: Image.asset(
+                  PngAssets.commonNotificationIcon,
+                  width: 24,
+                  height: 24,
+                ),
               ),
-            ),
-            SizedBox(width: 10),
-            SizedBox(
-              width: 40,
-              height: 40,
-              child: Image.asset(PngAssets.avatarOne),
-            ),
-          ],
-        ),
-      ],
+              SizedBox(width: 10),
+              SizedBox(
+                width: 40,
+                height: 40,
+                child: Image.asset(PngAssets.avatarOne),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

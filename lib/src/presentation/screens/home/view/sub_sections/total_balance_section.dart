@@ -9,6 +9,7 @@ class TotalBalanceSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 18),
       width: double.infinity,
       height: 177,
       padding: EdgeInsets.all(24),

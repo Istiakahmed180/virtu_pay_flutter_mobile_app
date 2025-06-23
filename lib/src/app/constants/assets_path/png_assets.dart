@@ -19,6 +19,8 @@ class PngAssets {
   static const String welcomeFrame = "$_baseFramePath/welcome_frame.png";
   static const String cardFrame = "$_baseFramePath/card_frame.png";
   static const String quickMenuFrame = "$_baseFramePath/quick_menu_frame.png";
+  static const String creditCardOne = "$_baseFramePath/credit_card_one.png";
+  static const String creditCardTwo = "$_baseFramePath/credit_card_two.png";
 
   // Image
   static const String onboardingImageOne =
