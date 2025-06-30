@@ -6,6 +6,7 @@ import 'package:virtu_pay/src/app/constants/assets_path/png_assets.dart';
 import 'package:virtu_pay/src/app/routes/routes.dart';
 import 'package:virtu_pay/src/common/widgets/button/common_button.dart';
 import 'package:virtu_pay/src/common/widgets/text_input_field/common_text_input_field.dart';
+import 'package:virtu_pay/src/presentation/screens/sign_in/controller/sign_in_controller.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -15,8 +16,7 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-  bool isPasswordVisible = true;
-  bool isRememberMe = false;
+  final controller = Get.find<SignInController>();
 
   @override
   Widget build(BuildContext context) {
@@ -69,19 +69,21 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                     ),
                     SizedBox(height: 8),
-                    CommonTextInputField(
-                      hintText: "12345678",
-                      obscureText: isPasswordVisible,
-                      suffixIcon:
-                          isPasswordVisible == true
-                              ? PngAssets.commonEyeShowIcon
-                              : PngAssets.commonEyeHideIcon,
-                      isSuffixIconChanged: true,
-                      onSuffixChanged: () {
-                        isPasswordVisible = !isPasswordVisible;
-                        setState(() {});
-                      },
-                      keyboardType: TextInputType.visiblePassword,
+                    Obx(
+                      () => CommonTextInputField(
+                        hintText: "12345678",
+                        obscureText: controller.isPasswordVisible.value,
+                        suffixIcon:
+                            controller.isPasswordVisible.value == true
+                                ? PngAssets.commonEyeShowIcon
+                                : PngAssets.commonEyeHideIcon,
+                        isSuffixIconChanged: true,
+                        onSuffixChanged: () {
+                          controller.isPasswordVisible.value =
+                              !controller.isPasswordVisible.value;
+                        },
+                        keyboardType: TextInputType.visiblePassword,
+                      ),
                     ),
                   ],
                 ),
@@ -91,31 +93,32 @@ class _SignInScreenState extends State<SignInScreen> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        isRememberMe = !isRememberMe;
-                        setState(() {});
+                        controller.isRememberMe.value =
+                            !controller.isRememberMe.value;
                       },
                       child: Row(
                         children: [
-                          Checkbox(
-                            checkColor: AppColors.white,
-                            side: BorderSide(
-                              color: AppColors.textPrimary.withValues(
-                                alpha: 0.10,
+                          Obx(
+                            () => Checkbox(
+                              checkColor: AppColors.white,
+                              side: BorderSide(
+                                color: AppColors.textPrimary.withValues(
+                                  alpha: 0.10,
+                                ),
+                                width: 1,
                               ),
-                              width: 1,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                              activeColor: AppColors.secondary,
+                              materialTapTargetSize:
+                                  MaterialTapTargetSize.shrinkWrap,
+                              visualDensity: VisualDensity.compact,
+                              value: controller.isRememberMe.value,
+                              onChanged: (bool? value) {
+                                controller.isRememberMe.value = value!;
+                              },
                             ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(6),
-                            ),
-                            activeColor: AppColors.secondary,
-                            materialTapTargetSize:
-                                MaterialTapTargetSize.shrinkWrap,
-                            visualDensity: VisualDensity.compact,
-                            value: isRememberMe,
-                            onChanged: (bool? value) {
-                              isRememberMe = value!;
-                              setState(() {});
-                            },
                           ),
                           Text(
                             "Remember me",
@@ -131,7 +134,10 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () => Get.toNamed(BaseRoute.forgotPassword),
+                      onTap: () {
+                        Get.delete<SignInController>();
+                        Get.toNamed(BaseRoute.forgotPassword);
+                      },
                       child: Text(
                         "Forgot Password",
                         style: TextStyle(
@@ -148,7 +154,10 @@ class _SignInScreenState extends State<SignInScreen> {
                   width: double.infinity,
                   height: 48,
                   text: "Sign In",
-                  onPressed: () => Get.toNamed(BaseRoute.navigation),
+                  onPressed: () {
+                    Get.delete<SignInController>();
+                    Get.toNamed(BaseRoute.navigation);
+                  },
                 ),
                 SizedBox(height: 20),
                 Align(
@@ -176,6 +185,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           recognizer:
                               TapGestureRecognizer()
                                 ..onTap = () {
+                                  Get.delete<SignInController>();
                                   Get.toNamed(BaseRoute.signUp);
                                 },
                         ),

@@ -5,6 +5,7 @@ import 'package:virtu_pay/src/app/constants/app_colors.dart';
 import 'package:virtu_pay/src/app/constants/assets_path/png_assets.dart';
 import 'package:virtu_pay/src/common/widgets/button/common_button.dart';
 import 'package:virtu_pay/src/common/widgets/text_input_field/common_text_input_field.dart';
+import 'package:virtu_pay/src/presentation/screens/sign_up/controller/sign_up_controller.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -14,9 +15,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  bool isPasswordVisible = true;
-  bool isConfirmPasswordVisible = true;
-  bool isRememberMe = false;
+  final controller = Get.find<SignUpController>();
 
   @override
   Widget build(BuildContext context) {
@@ -88,19 +87,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     SizedBox(height: 8),
-                    CommonTextInputField(
-                      hintText: "12345678",
-                      obscureText: isPasswordVisible,
-                      suffixIcon:
-                          isPasswordVisible == true
-                              ? PngAssets.commonEyeShowIcon
-                              : PngAssets.commonEyeHideIcon,
-                      isSuffixIconChanged: true,
-                      onSuffixChanged: () {
-                        isPasswordVisible = !isPasswordVisible;
-                        setState(() {});
-                      },
-                      keyboardType: TextInputType.visiblePassword,
+                    Obx(
+                      () => CommonTextInputField(
+                        hintText: "12345678",
+                        obscureText: controller.isPasswordVisible.value,
+                        suffixIcon:
+                            controller.isPasswordVisible.value == true
+                                ? PngAssets.commonEyeShowIcon
+                                : PngAssets.commonEyeHideIcon,
+                        isSuffixIconChanged: true,
+                        onSuffixChanged: () {
+                          controller.isPasswordVisible.value =
+                              !controller.isPasswordVisible.value;
+                        },
+                        keyboardType: TextInputType.visiblePassword,
+                      ),
                     ),
                   ],
                 ),
@@ -117,57 +118,65 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     SizedBox(height: 8),
-                    CommonTextInputField(
-                      hintText: "12345678",
-                      obscureText: isConfirmPasswordVisible,
-                      suffixIcon:
-                          isConfirmPasswordVisible == true
-                              ? PngAssets.commonEyeShowIcon
-                              : PngAssets.commonEyeHideIcon,
-                      isSuffixIconChanged: true,
-                      onSuffixChanged: () {
-                        isConfirmPasswordVisible = !isConfirmPasswordVisible;
-                        setState(() {});
-                      },
-                      keyboardType: TextInputType.visiblePassword,
+                    Obx(
+                      () => CommonTextInputField(
+                        hintText: "12345678",
+                        obscureText: controller.isConfirmPasswordVisible.value,
+                        suffixIcon:
+                            controller.isConfirmPasswordVisible.value == true
+                                ? PngAssets.commonEyeShowIcon
+                                : PngAssets.commonEyeHideIcon,
+                        isSuffixIconChanged: true,
+                        onSuffixChanged: () {
+                          controller.isConfirmPasswordVisible.value =
+                              !controller.isConfirmPasswordVisible.value;
+                        },
+                        keyboardType: TextInputType.visiblePassword,
+                      ),
                     ),
                   ],
                 ),
                 SizedBox(height: 5),
-                GestureDetector(
-                  onTap: () {
-                    isRememberMe = !isRememberMe;
-                    setState(() {});
-                  },
-                  child: Row(
-                    children: [
-                      Checkbox(
-                        checkColor: AppColors.white,
-                        side: BorderSide(
-                          color: AppColors.textPrimary.withValues(alpha: 0.10),
-                          width: 1,
+                Obx(
+                  () => GestureDetector(
+                    onTap: () {
+                      controller.isRememberMe.value =
+                          !controller.isRememberMe.value;
+                    },
+                    child: Row(
+                      children: [
+                        Checkbox(
+                          checkColor: AppColors.white,
+                          side: BorderSide(
+                            color: AppColors.textPrimary.withValues(
+                              alpha: 0.10,
+                            ),
+                            width: 1,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          activeColor: AppColors.secondary,
+                          materialTapTargetSize:
+                              MaterialTapTargetSize.shrinkWrap,
+                          visualDensity: VisualDensity.compact,
+                          value: controller.isRememberMe.value,
+                          onChanged: (bool? value) {
+                            controller.isRememberMe.value = value!;
+                          },
                         ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6),
+                        Text(
+                          "Remember me",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13,
+                            color: AppColors.textTertiary.withValues(
+                              alpha: 0.60,
+                            ),
+                          ),
                         ),
-                        activeColor: AppColors.secondary,
-                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        visualDensity: VisualDensity.compact,
-                        value: isRememberMe,
-                        onChanged: (bool? value) {
-                          isRememberMe = value!;
-                          setState(() {});
-                        },
-                      ),
-                      Text(
-                        "Remember me",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 13,
-                          color: AppColors.textTertiary.withValues(alpha: 0.60),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(height: 40),
@@ -175,6 +184,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   width: double.infinity,
                   height: 48,
                   text: "Sign Up",
+                  onPressed: () {
+                    Get.delete<SignUpController>();
+                    Get.back();
+                  },
                 ),
                 SizedBox(height: 20),
                 Align(
@@ -202,6 +215,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           recognizer:
                               TapGestureRecognizer()
                                 ..onTap = () {
+                                  Get.delete<SignUpController>();
                                   Get.back();
                                 },
                         ),
