@@ -34,8 +34,7 @@ flutter:
     - assets/others/frame/
     - assets/images/
     - assets/icons/common/
-    - assets/icons/bottom_navigation/raw/
-    - assets/icons/bottom_navigation/solid/
+    - assets/icons/bottom_navigation/
 
   fonts:
     - family: Poppins

@@ -16,4 +16,10 @@ class BaseRoute {
 
   // Forgot Password Route
   static const String forgotPassword = "/forgot_password_screen";
+
+  // Home Route
+  static const String home = "/home_screen";
+
+  // Navigation Route
+  static const String navigation = "/navigation_screen";
 }

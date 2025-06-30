@@ -4,10 +4,8 @@ class PngAssets {
   static const String _baseCommonPath = "assets/icons/common";
   static const String _baseFramePath = "assets/others/frame";
   static const String _baseImagePath = "assets/images";
-  static const String _baseBottomNavSolidPath =
-      "assets/icons/bottom_navigation/solid";
-  static const String _baseBottomNavRawPath =
-      "assets/icons/bottom_navigation/raw";
+  static const String _baseBottomNavigationPath =
+      "assets/icons/bottom_navigation";
 
   //  ------------------------------------------------------------------------- //
 
@@ -31,25 +29,15 @@ class PngAssets {
       "$_baseImagePath/onboarding_image_three.png";
   static const String avatarOne = "$_baseImagePath/avatar_one.png";
 
-  // Bottom Navigation Solid
-  static const String bottomNavigationCardSolidIcon =
-      "$_baseBottomNavSolidPath/bottom_navigation_card_solid_icon.png";
-  static const String bottomNavigationHomeSolidIcon =
-      "$_baseBottomNavSolidPath/bottom_navigation_home_solid_icon.png";
-  static const String bottomNavigationSettingsSolidIcon =
-      "$_baseBottomNavSolidPath/bottom_navigation_settings_solid_icon.png";
-  static const String bottomNavigationTransactionSolidIcon =
-      "$_baseBottomNavSolidPath/bottom_navigation_transaction_solid_icon.png";
-
-  // Bottom Navigation Raw
-  static const String bottomNavigationCardRawIcon =
-      "$_baseBottomNavRawPath/bottom_navigation_card_raw_icon.png";
-  static const String bottomNavigationHomeRawIcon =
-      "$_baseBottomNavRawPath/bottom_navigation_home_raw_icon.png";
-  static const String bottomNavigationSettingsRawIcon =
-      "$_baseBottomNavRawPath/bottom_navigation_settings_raw_icon.png";
-  static const String bottomNavigationTransactionRawIcon =
-      "$_baseBottomNavRawPath/bottom_navigation_transaction_raw_icon.png";
+  // Bottom Navigation
+  static const String bottomNavigationHomeIcon =
+      "$_baseBottomNavigationPath/bottom_navigation_home_icon.png";
+  static const String bottomNavigationCardIcon =
+      "$_baseBottomNavigationPath/bottom_navigation_card_icon.png";
+  static const String bottomNavigationTransactionIcon =
+      "$_baseBottomNavigationPath/bottom_navigation_transaction_icon.png";
+  static const String bottomNavigationSettingsIcon =
+      "$_baseBottomNavigationPath/bottom_navigation_settings_icon.png";
 
   // Common
   static const String commonEyeShowIcon =
